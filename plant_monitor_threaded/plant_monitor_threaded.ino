@@ -210,7 +210,7 @@ void checkWaterLevel() {
  // save current time as prev
   // Serial.print("Water level value:");
   // Serial.println(water_level_low);
-  if (water_level_low > 22 && water_level_high > 22 && water_level_overflowLimit >25) 
+  if (water_level_low > 30 && water_level_high > 30 && water_level_overflowLimit >35) 
   {
     Serial.println("Water level low");
     Serial.println(water_level_low);
@@ -228,7 +228,7 @@ void checkWaterLevel() {
   // if (water_level_med < 20) {
   //   Serial.println("Water level med");
   // }
- else if (water_level_high < 20 ) {
+ else if (water_level_high < 30 ) {
     Serial.println("Water level high");
     Serial.println(water_level_high);
         toggleRefillPumpState=0;
@@ -236,7 +236,7 @@ void checkWaterLevel() {
     digitalWrite(ReFillPump, LOW);
   }
   //int water_level_overflowLimit = touchRead(water_level_overflowLimit_touch);
-  else if ( currentMillis - previousMillis>= interval || water_level_overflowLimit < 20) {
+  else if ( currentMillis - previousMillis>= interval || water_level_overflowLimit < 30) {
     Serial.println("Water level over flow");
     Serial.println(water_level_overflowLimit);
         toggleRefillPumpState=0;
